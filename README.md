@@ -1,4 +1,4 @@
-# Kennedy Castillón Jiménez — Portfolio v2
+# Kennedy Castillón Jimenez — Portfolio v2
 
 Personal portfolio site built from scratch with a focus on editorial design, clean architecture, and scalable conventions.
 
