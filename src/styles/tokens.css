@@ -1,0 +1,71 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap");
+
+:root {
+  /* ─── Colors ─── */
+  --clr-bg: #000000;
+  --clr-surface: #0d0d0d;
+  --clr-border: #1e1e1e;
+  --clr-border-md: #2a2a2a;
+  --clr-text: #ffffff;
+  --clr-muted: #cccccc;
+  --clr-dim: #aaaaaa;
+
+  /* ─── Typography ─── */
+  --font-serif: "DM Serif Display", Georgia, serif;
+  --font-sans: "DM Sans", system-ui, sans-serif;
+
+  --text-xs: 0.65rem; /* 10.4px — labels, tags */
+  --text-sm: 0.78rem; /* 12.5px — meta, captions */
+  --text-base: 0.92rem; /* 14.7px — body */
+  --text-md: 1.05rem; /* 16.8px — large body */
+  --text-lg: 1.4rem; /* 22.4px — subheadings */
+  --text-xl: 2rem; /* 32px   — section headings */
+  --text-2xl: clamp(2.5rem, 5vw, 4rem);
+  --text-hero: clamp(5.5rem, 16vw, 13rem);
+
+  --leading-tight: 0.9;
+  --leading-snug: 1.2;
+  --leading-normal: 1.6;
+  --leading-loose: 1.75;
+
+  --tracking-tight: -0.02em;
+  --tracking-normal: 0.01em;
+  --tracking-wide: 0.08em;
+  --tracking-wider: 0.15em;
+  --tracking-widest: 0.22em;
+
+  /* ─── Spacing scale (4px base) ─── */
+  --space-1: 0.25rem; /*  4px */
+  --space-2: 0.5rem; /*  8px */
+  --space-3: 0.75rem; /* 12px */
+  --space-4: 1rem; /* 16px */
+  --space-5: 1.25rem; /* 20px */
+  --space-6: 1.5rem; /* 24px */
+  --space-8: 2rem; /* 32px */
+  --space-10: 2.5rem; /* 40px */
+  --space-12: 3rem; /* 48px */
+  --space-16: 4rem; /* 64px */
+  --space-20: 5rem; /* 80px */
+  --space-24: 6rem; /* 96px */
+
+  /* ─── Layout ─── */
+  --page-px: clamp(1.25rem, 4vw, 2.5rem);
+  --nav-height: 4.5rem;
+  --radius-sm: 2px;
+  --radius-md: 4px;
+  --radius-lg: 8px;
+
+  /* ─── Transitions ─── */
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in-out: cubic-bezier(0.45, 0, 0.55, 1);
+  --duration-fast: 150ms;
+  --duration-base: 250ms;
+  --duration-slow: 500ms;
+  --duration-slower: 800ms;
+}
+
+/* ─── Breakpoints (use in media queries) ─── */
+/* sm:  640px  */
+/* md:  768px  */
+/* lg:  1024px */
+/* xl:  1280px */

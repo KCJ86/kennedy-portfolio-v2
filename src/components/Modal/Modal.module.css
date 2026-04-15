@@ -1,0 +1,99 @@
+@import "../../styles/tokens.css";
+
+.overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 200;
+  background: rgba(0, 0, 0, 0.85);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-8) var(--page-px);
+  animation: overlayIn var(--duration-base) var(--ease-out) forwards;
+}
+
+@keyframes overlayIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+.modal {
+  background: var(--clr-surface);
+  border: 0.5px solid var(--clr-border);
+  border-radius: var(--radius-md);
+  width: 100%;
+  max-width: 900px;
+  height: 85vh;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  animation: modalIn var(--duration-slow) var(--ease-out) forwards;
+}
+
+@keyframes modalIn {
+  from { opacity: 0; transform: translateY(16px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ── Header ── */
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--space-4) var(--space-5);
+  border-bottom: 0.5px solid var(--clr-border);
+  flex-shrink: 0;
+}
+
+.title {
+  font-size: var(--text-xs);
+  letter-spacing: var(--tracking-widest);
+  text-transform: uppercase;
+  color: var(--clr-dim);
+}
+
+.headerActions {
+  display: flex;
+  align-items: center;
+  gap: var(--space-5);
+}
+
+.downloadBtn {
+  font-size: var(--text-xs);
+  letter-spacing: var(--tracking-wider);
+  text-transform: uppercase;
+  color: var(--clr-text);
+  border-bottom: 0.5px solid var(--clr-text);
+  padding-bottom: 1px;
+  transition: opacity var(--duration-base) ease;
+}
+
+.downloadBtn:hover { opacity: 0.45; }
+
+.closeBtn {
+  font-size: var(--text-sm);
+  color: var(--clr-muted);
+  transition: color var(--duration-base) ease;
+  padding: var(--space-1);
+}
+
+.closeBtn:hover { color: var(--clr-text); }
+
+/* ── PDF iframe ── */
+.iframe {
+  flex: 1;
+  width: 100%;
+  border: none;
+  background: #111;
+  min-height: 0;
+}
+
+/* ── Responsive ── */
+@media (max-width: 640px) {
+  .modal {
+    height: 92vh;
+    border-radius: var(--radius-sm);
+  }
+}

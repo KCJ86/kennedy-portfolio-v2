@@ -1,0 +1,32 @@
+@import "./tokens.css";
+
+body {
+  background-color: var(--clr-bg);
+  color: var(--clr-text);
+  font-family: var(--font-sans);
+  font-weight: 300;
+  overflow-x: hidden;
+}
+
+::selection {
+  background: var(--clr-text);
+  color: var(--clr-bg);
+}
+
+/* Subtle custom scrollbar */
+::-webkit-scrollbar {
+  width: 3px;
+}
+::-webkit-scrollbar-track {
+  background: var(--clr-bg);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--clr-border-md);
+  border-radius: 2px;
+}
+
+/* Focus ring for accessibility */
+:focus-visible {
+  outline: 1px solid var(--clr-muted);
+  outline-offset: 4px;
+}

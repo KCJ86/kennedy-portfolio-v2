@@ -1,0 +1,109 @@
+@import "../../styles/tokens.css";
+
+.footer {
+  padding: 0 var(--page-px) var(--space-12);
+  border-top: 0.5px solid var(--clr-border);
+}
+
+.inner {
+  width: 100%;
+}
+
+/* ── Main content row ── */
+.content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-8);
+  align-items: end;
+  padding-bottom: var(--space-12);
+  border-bottom: 0.5px solid var(--clr-border);
+  opacity: 0;
+  transform: translateY(20px);
+  transition:
+    opacity var(--duration-slower) var(--ease-out),
+    transform var(--duration-slower) var(--ease-out);
+}
+
+.content.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ── Big headline ── */
+.headline {
+  font-family: var(--font-serif);
+  font-size: clamp(3.5rem, 8vw, 7rem);
+  font-weight: 400;
+  color: var(--clr-text);
+  line-height: var(--leading-tight);
+  letter-spacing: var(--tracking-tight);
+}
+
+.headline em {
+  font-style: italic;
+  color: var(--clr-muted);
+}
+
+/* ── Right column ── */
+.right {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+  padding-bottom: var(--space-2);
+}
+
+.links {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.link {
+  font-size: var(--text-base);
+  color: var(--clr-muted);
+  font-weight: 300;
+  letter-spacing: var(--tracking-normal);
+  transition: color var(--duration-base) ease;
+  display: inline-block;
+}
+
+.link:hover {
+  color: var(--clr-text);
+}
+
+.availability {
+  font-size: var(--text-sm);
+  color: var(--clr-dim);
+  font-weight: 300;
+  font-style: italic;
+  letter-spacing: var(--tracking-normal);
+}
+
+/* ── Base bar ── */
+.base {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: var(--space-6);
+}
+
+.copy {
+  font-size: var(--text-xs);
+  letter-spacing: var(--tracking-wider);
+  text-transform: uppercase;
+  color: var(--clr-dim);
+}
+
+/* ── Responsive ── */
+@media (max-width: 768px) {
+  .content {
+    grid-template-columns: 1fr;
+    gap: var(--space-8);
+  }
+
+  .base {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--space-2);
+  }
+}

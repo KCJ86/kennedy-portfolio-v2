@@ -1,0 +1,19 @@
+@import "../../styles/tokens.css";
+
+.tag {
+  display: inline-block;
+  font-size: var(--text-xs);
+  letter-spacing: var(--tracking-wide);
+  text-transform: uppercase;
+  color: var(--clr-dim);
+  border: 0.5px solid var(--clr-border-md);
+  padding: var(--space-1) var(--space-2);
+  border-radius: var(--radius-sm);
+  transition: border-color var(--duration-base) ease,
+              color var(--duration-base) ease;
+}
+
+.tag:hover {
+  border-color: var(--clr-muted);
+  color: var(--clr-muted);
+}

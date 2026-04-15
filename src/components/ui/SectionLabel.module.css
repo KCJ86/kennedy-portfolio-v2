@@ -1,0 +1,14 @@
+@import "../../styles/tokens.css";
+
+.label {
+  font-size: var(--text-md);
+  letter-spacing: var(--tracking-widest);
+  text-transform: uppercase;
+  color: #aaaaaa;
+  padding-bottom: var(--space-4);
+}
+
+.bordered {
+  padding-top: var(--space-12);
+  border-top: 0.5px solid var(--clr-border);
+}
