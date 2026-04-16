@@ -21,8 +21,7 @@
   --text-lg: 1.4rem; /* 22.4px — subheadings */
   --text-xl: 2rem; /* 32px   — section headings */
   --text-2xl: clamp(2.5rem, 5vw, 4rem);
-  --text-hero: clamp(5.5rem, 16vw, 13rem);
-
+  --text-hero: clamp(4.5rem, 18vw, 13rem);
   --leading-tight: 0.9;
   --leading-snug: 1.2;
   --leading-normal: 1.6;
