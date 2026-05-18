@@ -1,8 +1,22 @@
 import { useEffect } from "react";
 import styles from "./Modal.module.css";
 
+const resumes = [
+  {
+    title: "Software Engineer, Full Stack",
+    file: "/assets/resume/KennedyCastillonJimenez_Full_Stack_Resume.pdf",
+  },
+  {
+    title: "User Experience Designer",
+    file: "/assets/resume/KennedyCastillonJimenez_UX_Resume.pdf",
+  },
+  {
+    title: "Solutions Engineer",
+    file: "/assets/resume/KennedyCastillonJimenez_Resume_Solutions.pdf",
+  },
+];
+
 export const Modal = ({ isOpen, onClose }) => {
-  // Lock body scroll when open
   useEffect(() => {
     if (isOpen) {
       document.body.style.overflow = "hidden";
@@ -14,7 +28,6 @@ export const Modal = ({ isOpen, onClose }) => {
     };
   }, [isOpen]);
 
-  // Close on Escape key
   useEffect(() => {
     const onKey = (e) => {
       if (e.key === "Escape") onClose();
@@ -25,45 +38,40 @@ export const Modal = ({ isOpen, onClose }) => {
 
   if (!isOpen) return null;
 
-  const pdfSrc = "/assets/resume/KennedyCastillonJimenez_Resume.pdf";
-
   return (
     <div
       className={styles.overlay}
       onClick={onClose}
       role="dialog"
       aria-modal="true"
-      aria-label="Resume viewer"
+      aria-label="Resume downloads"
     >
       <div className={styles.modal} onClick={(e) => e.stopPropagation()}>
-        {/* Header */}
         <div className={styles.header}>
           <span className={styles.title}>Resume</span>
-          <div className={styles.headerActions}>
-            <a
-              href={pdfSrc}
-              download
-              className={styles.downloadBtn}
-              onClick={(e) => e.stopPropagation()}
-            >
-              Download ↓
-            </a>
-            <button
-              className={styles.closeBtn}
-              onClick={onClose}
-              aria-label="Close modal"
-            >
-              ✕
-            </button>
-          </div>
+          <button
+            className={styles.closeBtn}
+            onClick={onClose}
+            aria-label="Close modal"
+          >
+            ✕
+          </button>
         </div>
-
-        {/* PDF viewer */}
-        <iframe
-          src={pdfSrc}
-          className={styles.iframe}
-          title="Kennedy Castillón Jiménez — Resume"
-        />
+        <ul className={styles.list}>
+          {resumes.map((r) => (
+            <li key={r.file} className={styles.row}>
+              <span className={styles.roleTitle}>{r.title}</span>
+              <a
+                href={r.file}
+                download
+                className={styles.downloadBtn}
+                onClick={(e) => e.stopPropagation()}
+              >
+                Download ↓
+              </a>
+            </li>
+          ))}
+        </ul>
       </div>
     </div>
   );

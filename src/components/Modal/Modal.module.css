@@ -15,8 +15,12 @@
 }
 
 @keyframes overlayIn {
-  from { opacity: 0; }
-  to   { opacity: 1; }
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 .modal {
@@ -24,27 +28,28 @@
   border: 0.5px solid var(--clr-border);
   border-radius: var(--radius-md);
   width: 100%;
-  max-width: 900px;
-  height: 85vh;
-  display: flex;
-  flex-direction: column;
+  max-width: 560px;
   overflow: hidden;
   animation: modalIn var(--duration-slow) var(--ease-out) forwards;
 }
 
 @keyframes modalIn {
-  from { opacity: 0; transform: translateY(16px); }
-  to   { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
-/* ── Header ── */
 .header {
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: var(--space-4) var(--space-5);
   border-bottom: 0.5px solid var(--clr-border);
-  flex-shrink: 0;
 }
 
 .title {
@@ -54,10 +59,40 @@
   color: var(--clr-dim);
 }
 
-.headerActions {
+.closeBtn {
+  font-size: var(--text-sm);
+  color: var(--clr-muted);
+  transition: color var(--duration-base) ease;
+  padding: var(--space-1);
+}
+.closeBtn:hover {
+  color: var(--clr-text);
+}
+
+.list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.row {
   display: flex;
   align-items: center;
-  gap: var(--space-5);
+  justify-content: space-between;
+  padding: var(--space-5) var(--space-5);
+  border-bottom: 0.5px solid var(--clr-border);
+  transition: background var(--duration-base) ease;
+}
+.row:last-child {
+  border-bottom: none;
+}
+.row:hover {
+  background: var(--clr-surface-raised, rgba(255, 255, 255, 0.03));
+}
+
+.roleTitle {
+  font-size: var(--text-sm);
+  color: var(--clr-text);
 }
 
 .downloadBtn {
@@ -68,32 +103,8 @@
   border-bottom: 0.5px solid var(--clr-text);
   padding-bottom: 1px;
   transition: opacity var(--duration-base) ease;
+  white-space: nowrap;
 }
-
-.downloadBtn:hover { opacity: 0.45; }
-
-.closeBtn {
-  font-size: var(--text-sm);
-  color: var(--clr-muted);
-  transition: color var(--duration-base) ease;
-  padding: var(--space-1);
-}
-
-.closeBtn:hover { color: var(--clr-text); }
-
-/* ── PDF iframe ── */
-.iframe {
-  flex: 1;
-  width: 100%;
-  border: none;
-  background: #111;
-  min-height: 0;
-}
-
-/* ── Responsive ── */
-@media (max-width: 640px) {
-  .modal {
-    height: 92vh;
-    border-radius: var(--radius-sm);
-  }
+.downloadBtn:hover {
+  opacity: 0.45;
 }

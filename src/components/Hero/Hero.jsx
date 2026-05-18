@@ -3,8 +3,8 @@ import styles from "./Hero.module.css";
 
 export const Hero = () => {
   const firstRef = useRef(null);
-  const lastRef  = useRef(null);
-  const metaRef  = useRef(null);
+  const lastRef = useRef(null);
+  const metaRef = useRef(null);
 
   useEffect(() => {
     const els = [firstRef.current, lastRef.current, metaRef.current];
@@ -12,11 +12,14 @@ export const Hero = () => {
       if (!el) return;
       el.style.opacity = "0";
       el.style.transform = "translateY(24px)";
-      setTimeout(() => {
-        el.style.transition = `opacity ${800}ms var(--ease-out), transform ${800}ms var(--ease-out)`;
-        el.style.opacity = "1";
-        el.style.transform = "translateY(0)";
-      }, 120 + i * 100);
+      setTimeout(
+        () => {
+          el.style.transition = `opacity ${800}ms var(--ease-out), transform ${800}ms var(--ease-out)`;
+          el.style.opacity = "1";
+          el.style.transform = "translateY(0)";
+        },
+        120 + i * 100,
+      );
     });
   }, []);
 
@@ -24,8 +27,12 @@ export const Hero = () => {
     <section className={styles.hero} aria-label="Introduction">
       <div className={styles.inner}>
         <h1 className={styles.name}>
-          <span ref={firstRef} className={styles.nameFirst}>Kennedy</span>
-          <span ref={lastRef}  className={styles.nameLast}>Castillón</span>
+          <span ref={firstRef} className={styles.nameFirst}>
+            Kennedy
+          </span>
+          <span ref={lastRef} className={styles.nameLast}>
+            Castillón
+          </span>
         </h1>
 
         <div ref={metaRef} className={styles.meta}>
@@ -35,8 +42,12 @@ export const Hero = () => {
             community, and making tech more accessible for everyone.
           </p>
           <div className={styles.actions}>
-            <a href="#work"    className={styles.ctaPrimary}>View my work ↓</a>
-            <a href="#contact" className={styles.ctaSecondary}>Say hello</a>
+            <a href="#work" className={styles.ctaPrimary}>
+              View my work ↓
+            </a>
+            <a href="#contact" className={styles.ctaSecondary}>
+              Say hello
+            </a>
           </div>
         </div>
       </div>
