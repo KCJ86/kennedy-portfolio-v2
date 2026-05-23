@@ -5,8 +5,31 @@
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  padding: 0 var(--page-px) var(--space-10);
+  padding: 0 var(--page-px) var(--space-16);
   position: relative;
+  background-image: url("/assets/hero/juan-rulfo.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.55) 0%,
+    rgba(0, 0, 0, 0.3) 40%,
+    rgba(0, 0, 0, 0.95) 100%
+  );
+  z-index: 0;
+}
+
+.inner {
+  position: relative;
+  z-index: 1;
+  width: 100%;
 }
 
 .inner {
@@ -128,6 +151,12 @@
     align-items: flex-start;
     gap: var(--space-4);
   }
+
+  .nameFirst,
+  .nameLast {
+    font-size: clamp(4rem, 15vw, 6rem);
+  }
+
   .scrollHint {
     display: none;
   }
